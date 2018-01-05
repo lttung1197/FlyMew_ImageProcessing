@@ -1,0 +1,3 @@
+/media/huan/rootfs/home/debian/RYA2017_mavlink/CMakeFiles/edit_cache.dir
+/media/huan/rootfs/home/debian/RYA2017_mavlink/CMakeFiles/rebuild_cache.dir
+/media/huan/rootfs/home/debian/RYA2017_mavlink/CMakeFiles/RYA2017.dir

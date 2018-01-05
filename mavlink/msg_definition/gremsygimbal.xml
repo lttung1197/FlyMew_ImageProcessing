@@ -1,0 +1,54 @@
+<?xml version='1.0'?>
+<mavlink>
+     <include>common.xml</include>
+     <enums>
+          <enum name="MOTOR_ENUM">
+               <description>Indicate names of motor</description>
+               <entry value="1" name="ROLL_MOTOR">
+                    <description>Roll Motor</description>
+               </entry>
+			   <entry value="2" name="PITCH_MOTOR">
+                    <description>Pitch Motor</description>
+               </entry>
+			   <entry value="3" name="YAW_MOTOR">
+                    <description>Yaw Motor</description>
+               </entry>
+          </enum>
+		  
+		  <enum name="TARGET_ENUM">
+               <description>Indicate names of motor</description>
+               <entry value="1" name="MOTOR">
+                    <description>Target Motor</description>
+               </entry>
+			   <entry value="2" name="PID">
+                    <description>Target PID</description>
+               </entry>
+          </enum>
+		  
+     </enums>  
+	 <!-- MESSAGE IDs 150 - 240: Space for custom messages in individual projectname_messages.xml files -->
+     <messages>
+          <message id="152" name="MOTOR_CONFIG">
+               <description>Config parameters of Motor: Power, Number of poles, Up Limit, Down Limit</description>
+               <field type="uint8_t" name="motor_name">Name of motor: ROLL_MOTOR, PITCH_MOTOR, YAW_MOTOR</field>
+               <field type="uint8_t" name="power">Specify maximun power of motor</field>
+               <field type="uint8_t" name="poles">Specify number of poles of motor</field>
+			   <field type="int16_t" name="up_limit">Specify up limit of motor</field>
+			   <field type="int16_t" name="down_limit">Specify down limit of motor</field>		   
+          </message>
+		  
+		  <message id="153" name="PID_CONFIG">
+			   <description>Config parameters of Motor: Power, Number of poles, Up Limit, Down Limit</description>
+               <field type="uint8_t" name="motor_name">Name of motor: ROLL_MOTOR, PITCH_MOTOR, YAW_MOTOR</field>
+               <field type="float" name="kp_factor">Specify kp factor of motor</field>
+               <field type="float" name="ki_factor">Specify ki factor of motor</field>
+			   <field type="float" name="kd_factor">Specify kd factor of motor</field>
+		  </message>
+		  
+		   <message id="160" name="READ_PARAMETER">
+			   <description>request read value of parameters of: Motor, PID</description>
+               <field type="uint8_t" name="read_target">Specify Target to read value</field>
+		  </message>
+        
+     </messages>
+</mavlink>

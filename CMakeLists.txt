@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.1)
+project( RYA2017 )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
+set(SOURCE_FILES main.cpp Object.cpp utility.cpp pid.cpp TCPServer.cpp UDPServer.cpp MavlinkData.cpp)
+add_executable( RYA2017 ${SOURCE_FILES})
+target_link_libraries( RYA2017 ${OpenCV_LIBS} )
